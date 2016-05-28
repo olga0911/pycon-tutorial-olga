@@ -42,4 +42,13 @@ def test_consume_3():
     assert chars == 7                     # includes whitespace in char count
     assert words == 3
     assert lines == 1
+
+def test_consume_4():
+    # do another basic test of the consume function.
+    testfile = _make_testfile('sometext.txt', 'a\nb\ncc\ndd\ne')
+    chars, words, lines = wordcount_lib.consume(testfile)
+
+    assert chars == 11                    # includes whitespace in char count
+    assert words == 5
+    assert lines == 5
     
